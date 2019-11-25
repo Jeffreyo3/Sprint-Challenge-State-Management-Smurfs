@@ -1,5 +1,6 @@
 import React from 'react';
 import Smurf from './Smurf';
+import SmurfForm from './SmurfForm';
 
 import { connect } from 'react-redux';
 import { getData } from '../actions';
@@ -31,6 +32,8 @@ const SmurfList = (props) => {
                 
                 )}
             </div>
+
+            <SmurfForm />
         </>
     )
 }

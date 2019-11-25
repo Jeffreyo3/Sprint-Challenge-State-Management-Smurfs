@@ -1,19 +1,14 @@
 import {
     GET_DATA,
     LOAD_SUCCESS,
-    LOAD_FAIL
+    LOAD_FAIL,
+    ADD_SMURF
 } from '../actions';
 
 const initialState = {
     isLoading: false,
     error: "",
     smurf: [
-        {
-        name: "",
-        age: 0,
-        height: "",
-        id: 0
-        }
 
     ]
 };
@@ -40,6 +35,13 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload,
                 isLoading: false
+            };
+
+        case ADD_SMURF:
+            return {
+                ...state,
+                isLoading: false,
+                smurf: [...state.smurf, action.payload],
             };
 
         default:
