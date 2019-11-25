@@ -7,11 +7,19 @@ import {
 const initialState = {
     isLoading: false,
     error: "",
-    smurf: []
+    smurf: [
+        {
+        name: "",
+        age: 0,
+        height: "",
+        id: 0
+        }
+
+    ]
 };
 
 const reducer = (state = initialState, action) => {
-    // console.log(state, action);
+    console.log(state, action);
     switch(action.type) {
 
         case GET_DATA:
