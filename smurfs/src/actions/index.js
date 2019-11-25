@@ -1,4 +1,4 @@
-import Axios from 'axios;'
+import axios from 'axios';
 
 export const GET_DATA = "GET_DATA";
 export const LOAD_SUCCESS = "LOAD_SUCCESS";
@@ -7,11 +7,11 @@ export const LOAD_FAIL = "LOAD_FAIL";
 export const getData = () => dispatch => {
     dispatch({type: GET_DATA});
 
-    Axios
-        .get('')
+    axios
+        .get('http://localhost:3333/smurfs')
         .then(res => dispatch({
             type: LOAD_SUCCESS,
-            payload: res.value
+            payload: res.data.value
             })
         )
         .catch(err => {console.log(err);
