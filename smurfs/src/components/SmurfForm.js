@@ -7,7 +7,7 @@ const SmurfForm = (props) => {
 
     const [smurfInfo, setSmurfInfo] = React.useState({name: "", age: "", height: "", id: Date.now()});
     const handleChanges = e => {
-        setSmurfInfo({...smurfInfo, [e.target.name]: e.target.value})
+        setSmurfInfo({[e.target.name]: e.target.value})
     };
     const handleSubmit = e => {
         e.preventDefault();

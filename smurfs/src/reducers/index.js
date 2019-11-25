@@ -2,7 +2,9 @@ import {
     GET_DATA,
     LOAD_SUCCESS,
     LOAD_FAIL,
-    ADD_SMURF
+    ADD_SMURF,
+    ADD_FAILURE,
+    ADD_SUCCESS
 } from '../actions';
 
 const initialState = {
@@ -37,12 +39,26 @@ const reducer = (state = initialState, action) => {
                 isLoading: false
             };
 
+
         case ADD_SMURF:
             return {
                 ...state,
-                isLoading: false,
-                smurf: [...state.smurf, action.payload],
+                isLoading: true
             };
+
+        case ADD_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                smurf: [...state.smurf, action.payload]
+            };
+
+        case ADD_FAILURE:
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
+            }
 
         default:
             return state;
