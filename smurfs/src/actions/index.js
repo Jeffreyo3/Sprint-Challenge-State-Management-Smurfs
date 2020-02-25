@@ -37,11 +37,10 @@ export const addSmurf = value => dispatch => {
             .post("http://localhost:3333/smurfs", {
                 name: value.name,
                 age: value.age,
-                height: value.height,
-                id: Date.now()
+                height: value.height
             })
             .then(res => {
-                console.log(res);
+                console.log(res.data);
                 dispatch({
                     type: ADD_SUCCESS, 
                     payload: res.data

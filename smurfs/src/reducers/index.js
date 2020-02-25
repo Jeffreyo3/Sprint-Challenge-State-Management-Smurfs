@@ -16,7 +16,6 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-    console.log(state, action);
     switch(action.type) {
 
         case GET_DATA:
@@ -50,7 +49,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                smurf: [...state.smurf, action.payload]
+                smurf: [...action.payload]
             };
 
         case ADD_FAILURE:

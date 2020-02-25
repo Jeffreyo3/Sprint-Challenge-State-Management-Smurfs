@@ -1,9 +1,11 @@
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan')
 const port = 3333;
 
 const server = express();
 server.use(express.json());
+server.use(morgan('dev'));
 server.use(cors());
 
 const sendUserError = (msg, res) => {
